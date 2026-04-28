@@ -27,4 +27,13 @@ class Exercises {
             }
         return sum
         }
+    fun generarResumen(productos: List<Pair<String, Double>>): Map<String, Any> {
+        val mapaResumen = mutableMapOf<String, Any>()
+        mapaResumen["totalProductos"] = productos.size
+        mapaResumen["precioTotal"] = productos.sumOf { it.second }
+        mapaResumen["productoMasCaro"] =  productos.maxBy { it.second }.first
+
+        return mapaResumen
+
     }
+}
